@@ -8,8 +8,9 @@ import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import FaceIcon from "@material-ui/icons/Face";
 import { useSelector, useDispatch } from "react-redux";
-import { clearErrors, login ,register} from "../../actions/userAction";
+import { clearErrors, login, register } from "../../actions/userAction";
 import ProfileIMG from "../../assets/img/Profile.png";
+import Header from "../layout/Header/Header";
 
 const Loginregister = ({ history, location }) => {
   const dispatch = useDispatch();
@@ -52,7 +53,6 @@ const Loginregister = ({ history, location }) => {
     myForm.set("password", password);
     myForm.set("avatar", avatar);
     dispatch(register(myForm));
-    // console.log("Form");
   };
 
   const registerDataChange = (e) => {
@@ -83,7 +83,7 @@ const Loginregister = ({ history, location }) => {
     if (isAuthenticated) {
       history.push(redirect);
     }
-  }, [dispatch, error, alert,history,isAuthenticated]);
+  }, [dispatch, error, alert, history, isAuthenticated, location, redirect]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
@@ -108,6 +108,10 @@ const Loginregister = ({ history, location }) => {
         <Loader />
       ) : (
         <Fragment>
+          <MetaData title="Đăng nhập" />
+          <header>
+            <Header />
+          </header>
           <div className="loginRegisterContainer">
             <div className="loginRegisterBox">
               <div>
@@ -133,7 +137,7 @@ const Loginregister = ({ history, location }) => {
                   <LockOpenIcon />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Mật khẩu"
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
@@ -153,7 +157,7 @@ const Loginregister = ({ history, location }) => {
                   <FaceIcon />
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder="Tên"
                     required
                     name="name"
                     value={name}
@@ -175,7 +179,7 @@ const Loginregister = ({ history, location }) => {
                   <LockOpenIcon />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Mật khẩu"
                     required
                     name="password"
                     value={password}

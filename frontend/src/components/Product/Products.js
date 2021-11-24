@@ -15,8 +15,10 @@ import {
   BoxProductSmall,
 } from "../boxContainer/common";
 import MetaData from "../layout/MetaData";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
 
-const categories = ["CPU", "GPU", "MAINBOARD", "RAM", "Laptop"];
+const categories = ["CPU", "GPU", "MAINBOARD", "RAM"];
 
 const Products = ({ match }) => {
   window.scrollTo(0, 0);
@@ -47,6 +49,7 @@ const Products = ({ match }) => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
@@ -58,11 +61,15 @@ const Products = ({ match }) => {
 
   return (
     <Fragment>
+      <header>
+        <Header />
+      </header>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
           <MetaData title="Sản phẩm -- Gaming Gear" />
+
           <BoxProduct>
             <h2 className="productsHeading">Danh Mục Sản Phẩm</h2>
             <BoxProductSmall>
@@ -76,7 +83,9 @@ const Products = ({ match }) => {
                   min={0}
                   max={50000}
                 />
-                <Typography  component="legend" align="center">Loại sản phẩm</Typography>
+                <Typography component="legend" align="center">
+                  Loại sản phẩm
+                </Typography>
                 <ul className="categoryBox">
                   {categories.map((category) => (
                     <li
@@ -90,7 +99,9 @@ const Products = ({ match }) => {
                 </ul>
 
                 <fieldset className="fieldSet">
-                  <Typography component="legend" align="center">Xếp theo đánh giá</Typography>
+                  <Typography component="legend" align="center">
+                    Xếp theo đánh giá
+                  </Typography>
                   <Slider
                     value={ratings}
                     onChange={(e, newRating) => {
@@ -118,10 +129,10 @@ const Products = ({ match }) => {
                 itemsCountPerPage={resultPerPage}
                 totalItemsCount={productsCount}
                 onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Prev"
-                firstPageText="1st"
-                lastPageText="Last"
+                nextPageText=">"
+                prevPageText="<"
+                firstPageText="<<"
+                lastPageText=">>"
                 itemClass="page-Item"
                 linkClass="page-Link"
                 activeClass="page-Item-Active"
@@ -131,6 +142,9 @@ const Products = ({ match }) => {
           )}
         </Fragment>
       )}
+      <footer>
+        <Footer />
+      </footer>
     </Fragment>
   );
 };

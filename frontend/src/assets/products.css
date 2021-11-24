@@ -60,7 +60,7 @@
 }
 
 .page-Item-Active {
-  background-color: #eb4034;
+  background-color: #EE2019;
 }
 
 .page-Link-Active {
@@ -87,7 +87,7 @@
   transition: all 0.5s;
 }
 .category-link:hover {
-  color: tomato;
+  color: #EE2019;
 }
 
 /* .fieldSet {

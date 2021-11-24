@@ -24,7 +24,6 @@
   margin: 1vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
-  
 }
 .productCard > img {
   width: 17vmax;
@@ -33,8 +32,9 @@
   margin: 0.5vmax;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
-.productCard > div > span {
+.productCardSpan {
   margin: 0.5vmax;
   font: 300 0.7vmax "Roboto";
 }
@@ -50,7 +50,7 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }
-.productCard:hover {
+.productCard:hover  {
   box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
   transform: translateY(-1vmax);
 }

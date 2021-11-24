@@ -4,7 +4,7 @@ export const FooterContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 2vmax;
-  background-color: #15161d;
+  background-color: #000;
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -36,7 +36,7 @@ export const FooterP = styled.p`
 export const FooterH1 = styled.h1`
   font-size: 3vmax;
   font-family: "Roboto";
-  color: #eb4034;
+  color: #EE2019;
   text-align: center;
 `;
 

@@ -24,7 +24,7 @@
   }
   .loginRegisterToggle > p {
     color: rgba(0, 0, 0, 0.678);
-    font: 300 1vmax "Roboto";
+    font: 600 1vmax "Roboto";
     transition: all 0.5s;
     cursor: pointer;
     display: grid;
@@ -33,11 +33,11 @@
     margin-top: 1.5vmax
   }
   .loginRegisterToggle > p:hover {
-    color: #eb4034;
+    color: #EE2019;
   }
   
   .loginRegisterBox > div > button {
-    background-color: #eb4034;
+    background-color: #EE2019;
     height: 3px;
     width: 50%;
     border: none;
@@ -95,7 +95,7 @@
   }
   
   .loginForm > a:hover {
-    color: #eb4034;
+    color: #EE2019;
   }
   
   #registerImage > img {
@@ -128,7 +128,7 @@
   .loginBtn,
   .registerBtn {
     border: none;
-    background-color: #eb4034;
+    background-color: #EE2019;
     color: white;
     font: 300 0.9vmax "Roboto";
     width: 100%;

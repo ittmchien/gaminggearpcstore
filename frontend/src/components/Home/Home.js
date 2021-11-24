@@ -10,13 +10,13 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
 
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products } = useSelector(
-    (state) => state.products
-  );
+  const { loading, error, products } = useSelector((state) => state.products);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,6 +28,9 @@ const Home = () => {
   }, [dispatch, error, alert]);
   return (
     <Fragment>
+      <header>
+        <Header />
+      </header>
       {loading ? (
         <Loader />
       ) : (
@@ -86,6 +89,9 @@ const Home = () => {
           </Container>
         </Fragment>
       )}
+      <footer>
+        <Footer />
+      </footer>
     </Fragment>
   );
 };

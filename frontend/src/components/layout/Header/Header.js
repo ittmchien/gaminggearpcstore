@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoBlack from "../../../assets/img/logo-black.png";
 import LogoWhite from "../../../assets/img/logo-white.png";
+import UserOptions from "../Header/UserOptions";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { isAuthenticated, user } = useSelector((state) => state.user);
+
   const [scrollnavbar, setscrollnavbar] = useState(
     "navbar navbar-expand-lg fixed-top py-3"
   );
@@ -82,14 +86,17 @@ const Header = () => {
                     Tìm Kiếm Sản Phẩm
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link
-                    to="/login"
-                    className="nav-link text-uppercase font-weight-bold"
-                  >
-                    Đăng Nhập
-                  </Link>
-                </li>
+                {!isAuthenticated && (
+                  <li className="nav-item">
+                    <Link
+                      to="/login"
+                      className="nav-link text-uppercase font-weight-bold"
+                    >
+                      Đăng Nhập
+                    </Link>
+                  </li>
+                )}
+                {isAuthenticated && <UserOptions user={user} />}
               </ul>
             </div>
           </div>
