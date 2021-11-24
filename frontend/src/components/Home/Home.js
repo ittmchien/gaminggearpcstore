@@ -1,67 +1,92 @@
-import React from "react";
-import Product from "./Product";
-
-const product = {
-  name: "Vi du",
-  images: [
-    {
-      url: "https://media-cdn.laodong.vn/storage/newsportal/2021/11/15/974164/Lisa.jpg?w=888&h=592&crop=auto&scale=both",
-    },
-  ],
-  price: "3000",
-  _id: "abc",
-};
+import React, { Fragment, useEffect } from "react";
+import ProductCard from "./ProductCard";
+import "../../assets/home.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Carousel, Container } from "react-bootstrap";
+import { CarouselContainer, IMGCarouse } from "../boxContainer/common";
+import "../../assets/user.css";
+import MetaData from "../layout/MetaData";
+import { clearErrors, getProduct } from "../../actions/productAction";
+import { useSelector, useDispatch } from "react-redux";
+import Loader from "../layout/Loader/Loader";
+import { useAlert } from "react-alert";
 
 const Home = () => {
-  return (
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-title">
-              <h3 class="title">New Products</h3>
-              <div class="section-nav">
-                <ul class="section-tab-nav tab-nav">
-                  <li class="active">
-                    <a data-toggle="tab" href="#tab1">
-                      Laptops
-                    </a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#tab1">
-                      Smartphones
-                    </a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#tab1">
-                      Cameras
-                    </a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#tab1">
-                      Accessories
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const { loading, error, products } = useSelector(
+    (state) => state.products
+  );
 
-          <div class="col-md-12">
-            <div class="row">
-              <div class="products-tabs">
-                <div id="tab1" class="tab-pane active">
-                  <div class="products-slick" data-nav="#slick-nav-1">
-                    <Product product={product} />
-                  </div>
-                  <div id="slick-nav-1" class="products-slick-nav"></div>
-                </div>
-              </div>
-            </div>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+    dispatch(getProduct());
+  }, [dispatch, error, alert]);
+  return (
+    <Fragment>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Fragment>
+          <MetaData title="Gaming Gear" />
+          <CarouselContainer>
+            <Carousel fade>
+              <Carousel.Item interval={1000}>
+                <IMGCarouse
+                  className="d-block w-100"
+                  src="https://images.pexels.com/photos/1181269/pexels-photo-1181269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item interval={500}>
+                <IMGCarouse
+                  className="d-block w-100"
+                  src="https://images.pexels.com/photos/4006151/pexels-photo-4006151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="Second slide"
+                />
+                <Carousel.Caption>
+                  <h3>Second slide label</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <IMGCarouse
+                  className="d-block w-100"
+                  src="https://images.pexels.com/photos/4006151/pexels-photo-4006151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt="Third slide"
+                />
+                <Carousel.Caption>
+                  <h3>Third slide label</h3>
+                  <p>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+          </CarouselContainer>
+          <div>
+            <h2 className="homeHeading">Sản Phẩm</h2>
           </div>
-        </div>
-      </div>
-    </div>
+          <Container>
+            {products &&
+              products.map((product) => <ProductCard product={product} />)}
+          </Container>
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
