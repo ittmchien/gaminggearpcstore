@@ -1,10 +1,17 @@
 import React, { useState, Fragment } from "react";
 import MetaData from "../layout/MetaData";
-import "../../assets/search.css";
+// import "../../assets/search.css";
 import Header from "../layout/Header/Header";
+import {
+  FormSearch,
+  InputSearch,
+  InputSubmitSearch,
+} from "../boxContainer/common";
+import { useHistory } from "react-router-dom";
 
-const Search = ({ history }) => {
+const Search = () => {
   const [keyword, setKeyword] = useState("");
+  const history = useHistory();
 
   const searchSubmitHandler = (e) => {
     e.preventDefault();
@@ -17,18 +24,18 @@ const Search = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Tìm kiếm sản phẩm -- Gaming Gear" />
+      {/* <MetaData title="Tìm kiếm sản phẩm -- Gaming Gear" />
       <header>
         <Header />
-      </header>
-      <form className="searchBox" onSubmit={searchSubmitHandler}>
-        <input
+      </header> */}
+      <FormSearch onSubmit={searchSubmitHandler}>
+        <InputSearch
           type="text"
-          placeholder="Search a Product ..."
+          placeholder="Tìm kiếm sản phẩm"
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <input type="submit" value="Search" />
-      </form>
+        <InputSubmitSearch type="submit" value="Tìm kiếm" />
+      </FormSearch>
     </Fragment>
   );
 };

@@ -119,7 +119,9 @@ const Payment = ({ history }) => {
       <header>
         <Header />
       </header>
-      <CheckoutSteps activeStep={2} />
+      <div style={{ marginTop: "5vmax" }}>
+        <CheckoutSteps activeStep={1} />
+      </div>
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
           <Typography>Thông tin thẻ</Typography>

@@ -40,8 +40,9 @@ const Shipping = ({ history }) => {
       <header>
         <Header />
       </header>
-      
-      <CheckoutSteps activeStep={0} />
+      <div style={{ marginTop: "5vmax" }}>
+        <CheckoutSteps activeStep={1} />
+      </div>
       <div className="shippingContainer">
         <div className="shippingBox">
           <h2 className="shippingHeading">Nhập thông tin giao hàng</h2>

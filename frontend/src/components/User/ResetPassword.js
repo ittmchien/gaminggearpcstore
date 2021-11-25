@@ -7,6 +7,8 @@ import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
 
 const ResetPassword = ({ history, match }) => {
   const dispatch = useDispatch();
@@ -37,7 +39,7 @@ const ResetPassword = ({ history, match }) => {
     }
 
     if (success) {
-      alert.success("Password Updated Successfully");
+      alert.success("Cập nhật mật khẩu thành công");
 
       history.push("/login");
     }
@@ -45,6 +47,9 @@ const ResetPassword = ({ history, match }) => {
 
   return (
     <Fragment>
+      <header>
+        <Header />
+      </header>
       {loading ? (
         <Loader />
       ) : (
@@ -88,6 +93,9 @@ const ResetPassword = ({ history, match }) => {
           </div>
         </Fragment>
       )}
+      <footer>
+        <Footer />
+      </footer>
     </Fragment>
   );
 };

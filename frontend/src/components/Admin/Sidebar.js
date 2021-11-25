@@ -30,11 +30,11 @@ const Sidebar = () => {
         >
           <TreeItem nodeId="1" label="Sản phẩm">
             <Link to="/admin/products">
-              <TreeItem nodeId="2" label="All" icon={<PostAddIcon />} />
+              <TreeItem nodeId="2" label="Tất cả sản phẩm" icon={<PostAddIcon />} />
             </Link>
 
             <Link to="/admin/product">
-              <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
+              <TreeItem nodeId="3" label="Thêm sản phẩm" icon={<AddIcon />} />
             </Link>
           </TreeItem>
         </TreeView>

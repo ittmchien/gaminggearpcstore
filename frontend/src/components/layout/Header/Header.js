@@ -4,6 +4,7 @@ import LogoBlack from "../../../assets/img/logo-black.png";
 import LogoWhite from "../../../assets/img/logo-white.png";
 import UserOptions from "../Header/UserOptions";
 import { useSelector } from "react-redux";
+import Search from "../../Product/Search";
 
 const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -78,14 +79,11 @@ const Header = () => {
                     className="nav-link text-uppercase font-weight-bold"
                   ></Link>
                 </li>
-                <li className="nav-item">
-                  <Link
-                    to="/search"
-                    className="nav-link text-uppercase font-weight-bold"
-                  >
-                    Tìm Kiếm Sản Phẩm
-                  </Link>
-                </li>
+
+                {isAuthenticated && <UserOptions user={user} />}
+              </ul>
+              <Search />
+              <ul className="navbar-nav ml-auto">
                 {!isAuthenticated && (
                   <li className="nav-item">
                     <Link
@@ -96,7 +94,6 @@ const Header = () => {
                     </Link>
                   </li>
                 )}
-                {isAuthenticated && <UserOptions user={user} />}
               </ul>
             </div>
           </div>

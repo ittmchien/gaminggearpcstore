@@ -192,4 +192,28 @@ color: #fff;
 border-radius: 30px;
 `;
 
+export const FormSearch = styled.form`
+width: 50%;
+height: 100%;
+margin-left:70px;
+`;
+export const InputSearch = styled.input`
+width: 50%;
+height: 100%;
+outline: none;
+border: 1px solid black;
+padding: 8px;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+`;
+
+export const InputSubmitSearch = styled.input`
+width: 18%;
+height: 40px;
+background-color: #ee2019;
+border: none;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+color: #fff;
+`;
 

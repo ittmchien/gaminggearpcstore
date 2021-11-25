@@ -41,7 +41,10 @@ const ConfirmOrder = ({ history }) => {
       <header>
         <Header />
       </header>
-      <CheckoutSteps activeStep={1} />
+      <div style={{ marginTop: "5vmax" }}>
+        <CheckoutSteps activeStep={1} />
+      </div>
+
       <div className="confirmOrderPage">
         <div>
           <div className="confirmshippingArea">

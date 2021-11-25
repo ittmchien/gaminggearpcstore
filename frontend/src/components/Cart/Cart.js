@@ -6,6 +6,8 @@ import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
 import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/Footer";
 
 const Cart = ({ history }) => {
   const dispatch = useDispatch();
@@ -37,6 +39,10 @@ const Cart = ({ history }) => {
 
   return (
     <Fragment>
+      <header>
+        <Header />
+      </header>{" "}
+      */
       {cartItems.length === 0 ? (
         <div className="emptyCart">
           <RemoveShoppingCartIcon />
@@ -101,6 +107,9 @@ const Cart = ({ history }) => {
           </div>
         </Fragment>
       )}
+      <footer>
+        <Footer />
+      </footer>
     </Fragment>
   );
 };
