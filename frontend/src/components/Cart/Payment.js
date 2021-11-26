@@ -13,7 +13,7 @@ import {
 } from "@stripe/react-stripe-js";
 
 import axios from "axios";
-import "../../assets/payment.css";
+// import "../../assets/payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
@@ -107,6 +107,7 @@ const Payment = ({ history }) => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
@@ -120,7 +121,7 @@ const Payment = ({ history }) => {
         <Header />
       </header>
       <div style={{ marginTop: "5vmax" }}>
-        <CheckoutSteps activeStep={1} />
+        <CheckoutSteps activeStep={2} />
       </div>
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>

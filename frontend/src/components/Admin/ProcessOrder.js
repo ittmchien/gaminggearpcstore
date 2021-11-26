@@ -14,7 +14,7 @@ import { useAlert } from "react-alert";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../constants/orderConstants";
-import "../../assets/processorder.css";
+// import "../../assets/processorder.css";
 
 const ProcessOrder = ({ history, match }) => {
   const { order, error, loading } = useSelector((state) => state.orderDetails);
@@ -45,7 +45,7 @@ const ProcessOrder = ({ history, match }) => {
       dispatch(clearErrors());
     }
     if (isUpdated) {
-      alert.success("Order Updated Successfully");
+      alert.success("Cập nhật trạng thái đơn hàng thành công");
       dispatch({ type: UPDATE_ORDER_RESET });
     }
 
@@ -124,9 +124,9 @@ const ProcessOrder = ({ history, match }) => {
                             : "redColor"
                         }
                       >
-                        {order.orderStatus && order.orderStatus=== "Delivered"
-                            ? "Đã giao hàng"
-                            : "Đang giao hàng"}
+                        {order.orderStatus && order.orderStatus === "Delivered"
+                          ? "Đã giao hàng"
+                          : "Đang giao hàng"}
                       </p>
                     </div>
                   </div>

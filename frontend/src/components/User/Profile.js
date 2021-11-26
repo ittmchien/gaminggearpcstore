@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
-import "../../assets/profile.css";
+// import "../../assets/profile.css";
 import Header from "../layout/Header/Header";
 
 const Profile = ({ history }) => {

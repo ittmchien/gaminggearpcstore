@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import "../../assets/orderdetails.css";
+// import "../../assets/orderdetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";

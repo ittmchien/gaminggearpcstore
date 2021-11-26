@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
-import "../../assets/productlist.css";
+// import "../../assets/productlist.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,
@@ -73,7 +73,7 @@ const ProductList = ({ history }) => {
       headerName: "Giá",
       type: "number",
       minWidth: 10,
-      flex: 0.1,
+      flex: 0.2,
     },
 
     {

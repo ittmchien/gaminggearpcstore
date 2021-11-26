@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
-import "../../assets/productdetails.css";
+// import "../../assets/productdetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,

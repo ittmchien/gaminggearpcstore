@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/cartitemcard.css";
+// import "../../assets/cartitemcard.css";
 import { Link } from "react-router-dom";
 
 const CartItemCard = ({ item, deleteCartItems }) => {

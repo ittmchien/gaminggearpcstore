@@ -1,6 +1,7 @@
 /*Navbar*/
 .navbar {
   transition: all 0.4s;
+  background: #FFF;
 }
 
 .navbar .nav-link {

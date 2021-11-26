@@ -1,7 +1,4 @@
 import React, { useState, Fragment } from "react";
-import MetaData from "../layout/MetaData";
-// import "../../assets/search.css";
-import Header from "../layout/Header/Header";
 import {
   FormSearch,
   InputSearch,
@@ -24,10 +21,6 @@ const Search = () => {
 
   return (
     <Fragment>
-      {/* <MetaData title="Tìm kiếm sản phẩm -- Gaming Gear" />
-      <header>
-        <Header />
-      </header> */}
       <FormSearch onSubmit={searchSubmitHandler}>
         <InputSearch
           type="text"

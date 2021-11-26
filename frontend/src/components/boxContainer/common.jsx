@@ -8,6 +8,7 @@ height: 100%;
 export const IMGCarouse = styled.img`
 width: 100%; 
 height: 617px;
+object-fit:contain;
 `;
 
 export const BoxProduct = styled.div`

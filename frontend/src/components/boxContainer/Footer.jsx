@@ -42,11 +42,11 @@ export const FooterH1 = styled.h1`
 
 export const FooterA = styled.a`
   text-decoration: none;
-
   font-family: "Roboto";
   color: white;
   margin: 0.5vmax;
   transition: all 0.5s;
+  &:hover {color:#EE2019}
 `;
 export function FooterJSX() {
   return (

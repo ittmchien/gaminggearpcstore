@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { DataGrid } from "@material-ui/data-grid";
-import "../../assets/productreviews.css";
-import "../../assets/newproduct.css";
+// import "../../assets/productreviews.css";
+// import "../../assets/newproduct.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,

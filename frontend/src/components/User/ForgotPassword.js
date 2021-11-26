@@ -1,11 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "../../assets/forgotpassword.css";
+// import "../../assets/forgotpassword.css";
 import Loader from "../layout/Loader/Loader";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, forgotPassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
+import Header from "../layout/Header/Header";
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,9 @@ const ForgotPassword = () => {
 
   return (
     <Fragment>
+      <header>
+        <Header />
+      </header>
       {loading ? (
         <Loader />
       ) : (

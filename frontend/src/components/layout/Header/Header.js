@@ -9,26 +9,26 @@ import Search from "../../Product/Search";
 const Header = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
-  const [scrollnavbar, setscrollnavbar] = useState(
+  const [scrollNavbar, setScrollNavbar] = useState(
     "navbar navbar-expand-lg fixed-top py-3"
   );
-  const [logo, setlogo] = useState(LogoBlack);
+  const [logo, setLogo] = useState(LogoBlack);
   window.addEventListener("scroll", function (event) {
     var scroll = this.scrollY;
 
     console.log(scroll);
     if (scroll > 8) {
-      setscrollnavbar("navbar active navbar-expand-lg fixed-top py-3");
-      setlogo(LogoWhite);
+      setScrollNavbar("navbar active navbar-expand-lg fixed-top py-3");
+      setLogo(LogoWhite);
     } else {
-      setscrollnavbar("navbar navbar-expand-lg fixed-top py-3");
-      setlogo(LogoBlack);
+      setScrollNavbar("navbar navbar-expand-lg fixed-top py-3");
+      setLogo(LogoBlack);
     }
   });
   return (
     <header>
       <div>
-        <nav className={scrollnavbar}>
+        <nav className={scrollNavbar}>
           <div className="container">
             <Link
               to="/"

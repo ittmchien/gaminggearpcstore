@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import "../../assets/shipping.css";
+// import "../../assets/shipping.css";
 import { useSelector, useDispatch } from "react-redux";
 import { saveShippingInfo } from "../../actions/cartAction";
 import MetaData from "../layout/MetaData";
@@ -41,7 +41,7 @@ const Shipping = ({ history }) => {
         <Header />
       </header>
       <div style={{ marginTop: "5vmax" }}>
-        <CheckoutSteps activeStep={1} />
+        <CheckoutSteps activeStep={0} />
       </div>
       <div className="shippingContainer">
         <div className="shippingBox">

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import "../../assets/loginregister.css";
+// import "../../assets/loginregister.css";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
@@ -12,7 +12,8 @@ import { clearErrors, login, register } from "../../actions/userAction";
 import ProfileIMG from "../../assets/img/Profile.png";
 import Header from "../layout/Header/Header";
 
-const Loginregister = ({ history, location }) => {
+
+const LoginRegister = ({ history, location }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -41,6 +42,7 @@ const Loginregister = ({ history, location }) => {
   const loginSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
+
   };
 
   const registerSubmit = (e) => {
@@ -206,4 +208,4 @@ const Loginregister = ({ history, location }) => {
   );
 };
 
-export default Loginregister;
+export default LoginRegister;

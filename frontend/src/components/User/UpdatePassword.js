@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "../../assets/updatepassword.css";
+// import "../../assets/updatepassword.css";
 import Loader from "../layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updatePassword } from "../../actions/userAction";
@@ -9,6 +9,7 @@ import MetaData from "../layout/MetaData";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import Header from "../layout/Header/Header";
 
 const UpdatePassword = ({ history }) => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const UpdatePassword = ({ history }) => {
     }
 
     if (isUpdated) {
-      alert.success("Profile Updated Successfully");
+      alert.success("Đã đổi mật khẩu thành công");
 
       history.push("/account");
 
@@ -51,11 +52,14 @@ const UpdatePassword = ({ history }) => {
 
   return (
     <Fragment>
+      <header>
+        <Header/>
+      </header>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Change Password" />
+          <MetaData title="Đổi mật khẩu" />
           <div className="updatePasswordContainer">
             <div className="updatePasswordBox">
               <h2 className="updatePasswordHeading">Update Profile</h2>
@@ -68,7 +72,7 @@ const UpdatePassword = ({ history }) => {
                   <VpnKeyIcon />
                   <input
                     type="password"
-                    placeholder="Old Password"
+                    placeholder="Mật khẩu cũ"
                     required
                     value={oldPassword}
                     onChange={(e) => setOldPassword(e.target.value)}
@@ -79,7 +83,7 @@ const UpdatePassword = ({ history }) => {
                   <LockOpenIcon />
                   <input
                     type="password"
-                    placeholder="New Password"
+                    placeholder="Mật khẩu mới"
                     required
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
@@ -89,7 +93,7 @@ const UpdatePassword = ({ history }) => {
                   <LockIcon />
                   <input
                     type="password"
-                    placeholder="Confirm Password"
+                    placeholder="Xác nhận mật khẩu mới"
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -97,7 +101,7 @@ const UpdatePassword = ({ history }) => {
                 </div>
                 <input
                   type="submit"
-                  value="Change"
+                  value="Cập nhật"
                   className="updatePasswordBtn"
                 />
               </form>

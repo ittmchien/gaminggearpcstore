@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import "../../assets/cart.css";
+// import "../../assets/cart.css";
 import CartItemCard from "./CartItemCard";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
